@@ -20,16 +20,25 @@ function validateInput(testInput) {
     let numInput = Number(testInput);
     if (testInput === "") {
         return "Add a number";
-    } else if (isNaN(numberInput)) {
+    } else if (isNaN(numInput)) {
         return "Not a number";
-    } else if (isNaN(numberInput) === false) {
+    } else if (isNaN(numInput) === false) {
         return "Number";
     }
 }
 
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   let pilot 
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) { 
+    let fuel = document.getElementById("fuelStatus");
+    let cargo = document.getElementById("cargoStatus");
+    let pilotStatus = document.getElementById("pilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
+
+    if (validateInput(pilot) === "" || validateInput(copilot) === "" || validateInput(fuelLevel) === "Add a number" || validateInput(cargoMass) === "Add a number") {
+        alert ("All fields are required!");
+    } else if (validateInput(pilot) === "Number" || validateInput(copilot) === "Number" || validateInput(fuelLevel) === "Not a number" || validateInput(cargoMass) === "Not a number") {
+        alert ("Please enter valid information!");
+    } 
 }
 
 async function myFetch() {
