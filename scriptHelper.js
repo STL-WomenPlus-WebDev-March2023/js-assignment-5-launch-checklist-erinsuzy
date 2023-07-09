@@ -20,18 +20,16 @@ function validateInput(testInput) {
     let numInput = Number(testInput);
     if (testInput === "") {
         return "Add a number";
-    }
-    else if (isNaN(numberInput)) {
+    } else if (isNaN(numberInput)) {
         return "Not a number";
-    }
-    else if (isNaN(numberInput) === false) {
+    } else if (isNaN(numberInput) === false) {
         return "Number";
     }
 }
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+   let pilot 
 }
 
 async function myFetch() {
