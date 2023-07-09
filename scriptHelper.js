@@ -1,5 +1,19 @@
-// Write your helper functions here!
+
 require('isomorphic-fetch');
+    let formSubmission = document.querySelector("form");
+    let pilot = document.querySelector("input[name=pilotName");
+    let copilot = document.querySelector("input[name=copilotName");
+    let fuelLevel = document.querySelector("input[name=fuelLevel");
+    let cargoMass = document.querySelector("input[name=cargoMass");
+    
+
+    function testInput() {
+    if (pilot.value === "" || copilot.value === "" || isNaN(fuelLevel.value) || isNaN(cargoMass.value)) {
+        alert("All fields are requred!");
+    }
+    return 
+}
+
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
@@ -20,20 +34,9 @@ function validateInput(testInput) {
     
 }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    let formSubmission = document.querySelector("form");
-    formSubmission.addEventListener("submit", function (event) {
-        const pilot = document.querySelector("input[name=pilotName");
-        const copilot = document.querySelector("input[name=copilotName");
-        const fuelLevel = document.querySelector("input[name=fuelLevel");
-        const cargoLevel = document.querySelector("input[name=cargoMass");
-  
-});
 
-    if (pilotNameInput.value === "" || copilotNameInput.value === "" || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
-        alert("All fields are requred!");
-        event.preventDefault();
-    }
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+   
 }
 
 async function myFetch() {
