@@ -35,3 +35,7 @@ form.addEventListener("submit", function(event) {
 
     formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
 });
+
+    let list = document.getElementById("faultyItems");
+    list.style.visibility = "hidden";
+    let form = document.querySelector("form");
