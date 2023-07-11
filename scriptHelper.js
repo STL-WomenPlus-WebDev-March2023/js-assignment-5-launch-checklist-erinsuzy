@@ -34,7 +34,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     let cargoStatus = document.getElementById("cargoStatus");
     let pilotStatus = document.getElementById("pilotStatus");
     let copilotStatus = document.getElementById("copilotStatus");
-    let list = document.getElementById("faultyItems");
     let launchStatus = document.getElementById("launchStatus");
 
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
@@ -43,8 +42,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
         alert ("Please enter valid information!");
     } else {
         list.style.visibility = "visible"
-        pilotStatus.innerHTML = `Pilot ${pilotName} is ready`
-        copilotStatus.innerHTML = `Co-pilot ${copilotName} is ready`}
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready`
+        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready`}
 
     if (fuelLevel < 10000 && cargoMass > 10000) {
         fuelStatus.innerHTML = `Fuel level too low for launch`
@@ -81,18 +80,13 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
-    let PlanetX = Math.floor(Math.random)*(planets.length) 
+    let PlanetX = Math.floor(Math.random()*planets.length) 
     return planets[PlanetX];
 }
 
 
-const _addDestinationInfo = addDestinationInfo;
-export { _addDestinationInfo as addDestinationInfo };
-const _validateInput = validateInput;
-export { _validateInput as validateInput };
-const _formSubmission = formSubmission;
-export { _formSubmission as formSubmission };
-const _pickPlanet = pickPlanet;
-export { _pickPlanet as pickPlanet };
-const _myFetch = myFetch;
-export { _myFetch as myFetch };
+module.exports.addDestinationInfo = addDestinationInfo;
+module.exports.validateInput = validateInput;
+module.exports.formSubmission = formSubmission;
+module.exports.pickPlanet = pickPlanet; 
+module.exports.myFetch = myFetch;
