@@ -1,6 +1,5 @@
 // Write your JavaScript code here!
-
-import { myFetch, pickPlanet, addDestinationInfo } from "./scriptHelper.js";
+const { myFetch, pickPlanet, addDestinationInfo } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
 

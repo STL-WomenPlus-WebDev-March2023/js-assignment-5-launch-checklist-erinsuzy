@@ -1,5 +1,5 @@
 
-import 'isomorphic-fetch';
+require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     let div = document.getElementById("missionTarget");
